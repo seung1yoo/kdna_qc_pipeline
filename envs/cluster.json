@@ -1,0 +1,31 @@
+{
+    "__default__": {
+        "time": "12:00:00",
+        "threads": "1",
+        "mem": "30",
+        "jobName": "{rule}.{wildcards.sample}.{wildcards.lane}",
+        "output": "logs/{rule}.{wildcards.sample}.{wildcards.lane}.stdout",
+        "error": "logs/{rule}.{wildcards.sample}.{wildcards.lane}.stderr"
+    },
+    "bwa": {
+        "threads": "16"
+    },
+    "sortbam": {
+        "threads": "1"
+    },
+    "dedupbam": {
+        "threads": "1"
+    },
+    "mergebam": {
+        "threads": "16",
+        "jobName": "{rule}.{wildcards.sample}",
+        "output": "logs/{rule}.{wildcards.sample}.stdout",
+        "error": "logs/{rule}.{wildcards.sample}.stderr"
+    },
+    "haplotypecaller": {
+        "threads": "16",
+        "jobName": "{rule}.{wildcards.sample}",
+        "output": "logs/{rule}.{wildcards.sample}.stdout",
+        "error": "logs/{rule}.{wildcards.sample}.stderr"
+    }
+}
