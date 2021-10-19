@@ -11,10 +11,10 @@
         "threads": "16"
     },
     "sortbam": {
-        "threads": "1"
+        "threads": "16"
     },
     "dedupbam": {
-        "threads": "1"
+        "threads": "16"
     },
     "mergebam": {
         "threads": "16",
