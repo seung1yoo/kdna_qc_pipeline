@@ -3,5 +3,6 @@ genome: /TBI/Share/BioPeople/shsong/BioResources/References/homo_sapiens/hg38/Ho
 bwaidx: /TBI/Share/BioPeople/shsong/BioResources/References/homo_sapiens/hg38/Homo_sapiens_assembly38.fasta
 region: /TBI/Share/BioPeople/siyoo/Pipelines/kdna_qc_pipeline/src/kdna_snp_10kb.sort.bed
 dbsnp: /TBI/Share/BioPeople/shsong/BioResources/References/homo_sapiens/hg38/dbsnp_146.hg38.vcf.gz
+rs: /TBI/Share/BioPeople/siyoo/Pipelines/kdna_qc_pipeline/src/96_loci_gt
 
 

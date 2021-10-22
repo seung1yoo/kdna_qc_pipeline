@@ -21,11 +21,14 @@ class Utils:
                 ls.append(f"analysis/bwa/{sample}/{sample}_{lane}.bam")
                 ls.append(f"analysis/bwa/{sample}/{sample}_{lane}.sort.bam")
                 ls.append(f"analysis/bwa/{sample}/{sample}_{lane}.dedup.bam")
-                #ls.append(f"analysis/bwa/{sample}/{sample}_{lane}.dedup.bai")
-                #ls.append(f"analysis/bwa/{sample}/{sample}_{lane}.dedup.txt")
+                ls.append(f"analysis/bwa/{sample}/{sample}_{lane}.dedup.bai")
+                ls.append(f"analysis/bwa/{sample}/{sample}_{lane}.dedup.txt")
             ls.append(f"analysis/bwa/{sample}/{sample}.merge.bam")
             ls.append(f"analysis/bwa/{sample}/{sample}.merge.bai")
             ls.append(f"analysis/haplotypecaller/{sample}/{sample}.vcf.gz")
+            ls.append(f"analysis/result/{sample}/{sample}.96.rs")
+            ls.append(f"analysis/result/{sample}/{sample}.96.stats")
+            ls.append(f"analysis/result/{sample}/{sample}.align.stats")
         return ls
 
     def get_ref(self, config):

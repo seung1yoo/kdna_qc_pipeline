@@ -65,7 +65,7 @@ rule dedupbam:
         " --remove-duplicates"
         " --nthreads {threads}"
         " --show-progress"
-        " --tempdir {params.tmp}"
+        " --tmpdir {params.tmp}"
         " {input.bam}"
         " {output.bam}"
 

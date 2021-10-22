@@ -24,3 +24,17 @@ rule haplotypecaller:
         " --dbsnp {config[ref_dbsnp]}"
         " --native-pair-hmm-threads {threads}"
 
+rule get96rs:
+    input:
+        vcf="analysis/haplotypecaller/{sample}/{sample}.vcf.gz"
+    output:
+        rs="analysis/result/{sample}/{sample}.96.rs",
+        stats="analysis/result/{sample}/{sample}.96.stats"
+    wildcard_constraints:
+        sample="[^/]+",
+    benchmark: "benchmarks/get96rs.{sample}.txt"
+    threads: 1
+    params:
+        rsfn=config["ref_rs"]
+    script:
+        "../bin/get96rs.py"

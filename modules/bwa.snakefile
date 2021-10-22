@@ -102,7 +102,8 @@ rule mergebam:
     input:
         bam=mergebam_input
     output:
-        bam="analysis/bwa/{sample}/{sample}.merge.bam"
+        bam="analysis/bwa/{sample}/{sample}.merge.bam",
+        bai="analysis/bwa/{sample}/{sample}.merge.bai"
     wildcard_constraints:
         sample="[^/]+",
     benchmark: "benchmarks/mergebam.{sample}.txt"

@@ -19,8 +19,9 @@ targets.append('haplotypecaller')
 rule all:
     input: utils.get_targets(targets)
 
-include: 'modules/bwa2.snakefile'
+include: 'modules/bwa.snakefile'
 include: 'modules/haplotypecaller.snakefile'
+include: 'modules/stats.snakefile'
 
 
 
