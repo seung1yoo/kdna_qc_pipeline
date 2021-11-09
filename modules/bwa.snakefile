@@ -124,3 +124,34 @@ rule mergebam:
         " --USE_THREADING true"
         " --CREATE_INDEX true"
 
+rule newrg:
+    input:
+        bam="analysis/bwa/{sample}/{sample}.merge.bam",
+    output:
+        bam="analysis/bwa/{sample}/{sample}.newrg.bam",
+        bai="analysis/bwa/{sample}/{sample}.newrg.bai"
+    wildcard_constraints:
+        sample="[^/]+",
+    benchmark: "benchmarks/newrg.{sample}.txt"
+    threads: 16
+    params:
+        tmp="analysis/bwa/{sample}/temp",
+        java_opts="-Xms50G",
+        sample="{sample}"
+    shell:
+        "mkdir -p {params.tmp} && "
+        "gatk"
+        " --java-options '{params.java_opts}'"
+        " AddOrReplaceReadGroups"
+        " --TMP_DIR {params.tmp}"
+        " --INPUT {input.bam}"
+        " --OUTPUT {output.bam}"
+        " --RGID {params.sample}"
+        " --RGLB {params.sample}"
+        " --RGPL ILLUMINA"
+        " --RGPU {params.sample}"
+        " --RGSM {params.sample}"
+        " --SORT_ORDER coordinate"
+        " --CREATE_INDEX true"
+
+

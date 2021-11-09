@@ -22,6 +22,12 @@
         "output": "logs/{rule}.{wildcards.sample}.stdout",
         "error": "logs/{rule}.{wildcards.sample}.stderr"
     },
+    "newrg": {
+        "threads": "16",
+        "jobName": "{rule}.{wildcards.sample}",
+        "output": "logs/{rule}.{wildcards.sample}.stdout",
+        "error": "logs/{rule}.{wildcards.sample}.stderr"
+    },
     "bam_stats": {
         "threads": "16",
         "jobName": "{rule}.{wildcards.sample}",

@@ -1,7 +1,7 @@
 
 rule haplotypecaller:
     input:
-        bam="analysis/bwa/{sample}/{sample}.merge.bam"
+        bam="analysis/bwa/{sample}/{sample}.newrg.bam"
     output:
         vcf="analysis/haplotypecaller/{sample}/{sample}.vcf.gz"
     wildcard_constraints:

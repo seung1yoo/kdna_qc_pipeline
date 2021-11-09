@@ -74,8 +74,11 @@ class Get96rs:
         gt_idx_s = gt_idx.split('/')
 
         gt_str = list()
-        for gt_idx in [int(x) for x in gt_idx_s]:
-            gt_str.append(gt_s[gt_idx])
+        for gt_idx in [x for x in gt_idx_s]:
+            if gt_idx in ["."]:
+                gt_str.append("N")
+            else:
+                gt_str.append(gt_s[int(gt_idx)])
         return '/'.join(gt_str)
 
     def get_info(self, _fmt, _info):

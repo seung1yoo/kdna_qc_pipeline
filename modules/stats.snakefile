@@ -3,7 +3,7 @@
 
 rule bam_stats:
     input:
-        bam="analysis/bwa/{sample}/{sample}.merge.bam",
+        bam="analysis/bwa/{sample}/{sample}.newrg.bam",
     output:
         stats="analysis/result/{sample}/{sample}.align.stats",
     wildcard_constraints:
